@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sửa thông tin phim</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Sửa thông tin phim</h1>
+    <form method="POST" action="/edit_movie/{{ movie[0] }}">
+        <label for="title">Tên phim:</label>
+        <input type="text" name="title" value="{{ movie[1] }}" required><br><br>
+        <label for="author">Tác giả:</label>
+        <input type="text" name="author" value="{{ movie[2] }}" required><br><br>
+        <label for="year">Năm sản xuất:</label>
+        <input type="number" name="year" value="{{ movie[3] }}" required><br><br>
+        <input type="submit" value="Cập nhật">
+    </form>
+    <br>
+    <a href="/list_movies">Quay lại danh sách phim</a>
+</body>
+</html>

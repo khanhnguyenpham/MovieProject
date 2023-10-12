@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quản lý phim</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Quản lý phim</h1>
+    <form method="POST" action="/add_movie">
+        <label for="title">Tên phim:</label>
+        <input type="text" name="title" required><br><br>
+        <label for="author">Tác giả:</label>
+        <input type="text" name="author" required><br><br>
+        <label for="year">Năm sản xuất:</label>
+        <input type="number" name="year" required><br><br>
+        <input type="submit" value="Thêm phim">
+    </form>
+    <br>
+    <a href="/list_movies">Xem danh sách phim</a>
+</body>
+</html>
+

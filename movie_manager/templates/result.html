@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Danh sách phim</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Danh sách phim</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tên phim</th>
+            <th>Tác giả</th>
+            <th>Năm sản xuất</th>
+            <th>Tùy chọn</th>
+        </tr>
+        {% for movie in movies %}
+            <tr>
+                <td>{{ movie[0] }}</td>
+                <td>{{ movie[1] }}</td>
+                <td>{{ movie[2] }}</td>
+                <td>{{ movie[3] }}</td>
+                <td>
+                    <a href="/view_movie/{{ movie[0] }}">Xem</a> |
+                    <a href="/edit_movie/{{ movie[0] }}">Sửa</a> |
+                    <a href="/delete_movie/{{ movie[0] }}" onclick="return confirm('Bạn có chắc chắn muốn xóa phim này không?')">Xóa</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Quay lại trang chính</a>
+</body>
+</html>
